@@ -60,8 +60,9 @@
 | **The Crown Dental Clinic** | Dental & Oral Care | Vercel | [Live Site](https://the-crown-dental-clinic.vercel.app) |
 | **The ARC Spa & Salon** | Luxury Beauty & Spa | Vercel | [Live Site](https://the-arc-spa-and-salon.vercel.app) |
 | **Babita Spa** | Therapeutic Wellness | Vercel | [Live Site](https://babita-spa.vercel.app) |
+| **Ram Madhav Profile** | Executive Branding | Vercel | [Live Site](https://ram-madhav.vercel.app) |
 | **Ethics Fitness** | Gym & Personal Training | Vercel | [Live Site](https://ethics-fitness.vercel.app) |
-| **Go Online CRM** | SaaS & Client Management | Vercel | [Live Site](https://go-online-crm.vercel.app) |
+| **Ethics Fitness Studio** | Strength & Conditioning | Vercel | [Live Site](https://ethics-fitness.vercel.app) |
 
 ---
 

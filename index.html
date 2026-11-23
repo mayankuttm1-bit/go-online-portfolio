@@ -141,10 +141,10 @@
           <img src="logo.jpg" alt="Go Online Logo" class="w-full h-full object-cover rounded-[10px]">
         </div>
         <div>
-          <span class="font-display font-extrabold text-2xl tracking-tight text-white flex items-center gap-1.5">
+          <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-white flex items-center gap-1.5">
             Go Online <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
           </span>
-          <span class="text-[11px] text-sky-400 font-semibold tracking-wider block uppercase">Websites for Businesses</span>
+          <span class="text-[11px] text-sky-400 font-semibold tracking-wider uppercase hidden sm:block">Websites for Businesses</span>
         </div>
       </a>
 
@@ -339,9 +339,6 @@
       </button>
       <button onclick="filterProjects('fitness')" data-cat="fitness" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-purple-500/50 hover:text-purple-400 transition-all">
         🏋️ Fitness & Gym (<span id="count-fitness">2</span>)
-      </button>
-      <button onclick="filterProjects('apps')" data-cat="apps" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-indigo-500/50 hover:text-indigo-400 transition-all">
-        ⚡ Custom Web Apps & CRM (<span id="count-apps">2</span>)
       </button>
     </div>
 
@@ -682,7 +679,7 @@
         badgeClass: 'badge-solar',
         icon: 'fa-solid fa-solar-panel',
         description: 'Comprehensive commercial & residential solar EPC web portal featuring project galleries, clean energy ROI metrics, and consultation capture.',
-        tags: ['Solar EPC', 'Commercial Solar', 'Clean Energy', 'GitHub Pages'],
+        tags: ['Solar EPC', 'Commercial Solar', 'Clean Energy', 'High Performance'],
         liveUrl: 'https://mayankuttm1-bit.github.io/innovative-energy-solutions/',
         githubUrl: 'https://github.com/mayankuttm1-bit/innovative-energy-solutions',
         host: 'GitHub Pages',
@@ -790,7 +787,7 @@
         badgeClass: 'badge-estate',
         icon: 'fa-solid fa-city',
         description: 'Modern luxury real estate portal showcasing prime residential plots, commercial properties, and executive villas with direct broker contact.',
-        tags: ['Real Estate', 'Luxury Villas', 'Vercel App'],
+        tags: ['Real Estate', 'Luxury Villas', 'Fast Load'],
         liveUrl: 'https://swastil-real-states.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/Swastik-real-states',
         host: 'Vercel',
@@ -898,7 +895,7 @@
         badgeClass: 'badge-health',
         icon: 'fa-solid fa-tooth',
         description: 'State-of-the-art dental clinic web portal with doctor qualification highlights, cosmetic smile treatments, and seamless appointment booking.',
-        tags: ['Dental Clinic', 'Doctor Profile', 'Appointment Booking', 'Vercel'],
+        tags: ['Dental Clinic', 'Doctor Profile', 'Appointment Booking', 'High Trust'],
         liveUrl: 'https://the-crown-dental-clinic.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/The-crown-dental-clinic',
         host: 'Vercel',
@@ -912,7 +909,7 @@
         badgeClass: 'badge-health',
         icon: 'fa-solid fa-spa',
         description: 'High-end beauty salon & luxury spa platform with interactive service menus, aroma therapy pricing, and VIP booking inquiry.',
-        tags: ['Luxury Spa', 'Beauty Salon', 'Service Menu', 'Vercel'],
+        tags: ['Luxury Spa', 'Beauty Salon', 'Service Menu', 'Aesthetic UI'],
         liveUrl: 'https://the-arc-spa-and-salon.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/the-arc-spa-and-salon',
         host: 'Vercel',
@@ -926,7 +923,7 @@
         badgeClass: 'badge-health',
         icon: 'fa-solid fa-hand-holding-heart',
         description: 'Holistic massage & wellness clinic portal with therapeutic treatment descriptions, package discounts, and quick phone booking.',
-        tags: ['Therapeutic Massage', 'Holistic Care', 'Vercel'],
+        tags: ['Therapeutic Massage', 'Holistic Care', 'Direct Booking'],
         liveUrl: 'https://babita-spa.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/Babita-spa',
         host: 'Vercel'
@@ -939,7 +936,7 @@
         badgeClass: 'badge-health',
         icon: 'fa-solid fa-user-tie',
         description: 'Clean personal and professional branding platform featuring executive credentials, media features, and public speaking archives.',
-        tags: ['Executive Brand', 'Personal Portfolio', 'Vercel'],
+        tags: ['Executive Brand', 'Personal Portfolio', 'Clean UI'],
         liveUrl: 'https://ram-madhav.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/Ram-Madhav',
         host: 'Vercel'
@@ -954,7 +951,7 @@
         badgeClass: 'badge-health',
         icon: 'fa-solid fa-dumbbell',
         description: 'High-impact fitness center portal with workout regime breakdowns, personal trainer profiles, and free 1-day pass conversion flow.',
-        tags: ['Gym & Fitness', 'Personal Training', 'Member Funnel', 'Vercel'],
+        tags: ['Gym & Fitness', 'Personal Training', 'Member Funnel', 'High Energy'],
         liveUrl: 'https://ethics-fitness.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/ethics-fitness',
         host: 'Vercel',
@@ -972,35 +969,6 @@
         liveUrl: 'https://ethics-fitness.vercel.app',
         githubUrl: 'https://github.com/mayankuttm1-bit/Ethics_fitness',
         host: 'Vercel'
-      },
-
-      // ⚡ WEB APPS & LEAD AUTOMATION
-      {
-        id: 'go-online-crm',
-        title: 'Go Online CRM',
-        category: 'apps',
-        categoryLabel: 'Custom SaaS Platform',
-        badgeClass: 'badge-app',
-        icon: 'fa-solid fa-chart-line',
-        description: 'Proprietary client management dashboard engineered for sales pipeline tracking, lead source analytics, and automated quote generation.',
-        tags: ['SaaS', 'CRM Dashboard', 'Lead Pipeline', 'Vercel'],
-        liveUrl: 'https://go-online-crm.vercel.app',
-        githubUrl: 'https://github.com/mayankuttm1-bit/go-online-crm',
-        host: 'Vercel',
-        featured: true
-      },
-      {
-        id: 'real-estate-lead-generator',
-        title: 'Real Estate Lead Generator',
-        category: 'apps',
-        categoryLabel: 'Lead Engine & Cold Mailer',
-        badgeClass: 'badge-app',
-        icon: 'fa-solid fa-envelope-open-text',
-        description: 'Automated outreach system designed for property developers and brokers to connect with prospective buyers via email automation.',
-        tags: ['Lead Scraping', 'Email Outreach', 'Cold Mailer', 'Automation'],
-        liveUrl: 'https://github.com/mayankuttm1-bit/real-estate-lead-generator-cold-mailer',
-        githubUrl: 'https://github.com/mayankuttm1-bit/real-estate-lead-generator-cold-mailer',
-        host: 'GitHub Repo'
       }
     ];
 
@@ -1026,8 +994,8 @@
               <span class="px-2.5 py-1 rounded-md text-[11px] font-bold ${project.badgeClass}">
                 <i class="${project.icon} mr-1"></i> ${project.categoryLabel}
               </span>
-              <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live ${project.host}
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live Website
               </span>
             </div>
 
@@ -1051,16 +1019,12 @@
             </div>
           </div>
 
-          <!-- Bottom Actions -->
-          <div class="pt-4 border-t border-white/5 flex items-center justify-between gap-3">
+          <!-- Bottom Action: Visit Live Website -->
+          <div class="pt-4 border-t border-white/5">
             <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" 
-               class="flex-1 py-2.5 px-3 rounded-xl bg-sky-500/10 hover:bg-sky-500 text-sky-400 hover:text-white border border-sky-500/30 hover:border-transparent text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Visit Live Site
-            </a>
-            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" 
-               title="View GitHub Repository"
-               class="py-2.5 px-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-semibold transition-all flex items-center justify-center">
-              <i class="fa-brands fa-github text-sm"></i>
+               class="w-full py-2.5 px-4 rounded-xl bg-sky-500/10 hover:bg-sky-500 text-sky-400 hover:text-white border border-sky-500/30 hover:border-transparent text-xs font-bold text-center transition-all duration-300 flex items-center justify-center gap-2 shadow-sm group-hover:shadow-sky-500/20">
+              <span>Visit Live Website</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[11px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
             </a>
           </div>
         </div>
@@ -1194,7 +1158,6 @@
       document.getElementById('count-realestate').textContent = clientProjects.filter(p => p.category === 'realestate').length;
       document.getElementById('count-wellness').textContent = clientProjects.filter(p => p.category === 'wellness').length;
       document.getElementById('count-fitness').textContent = clientProjects.filter(p => p.category === 'fitness').length;
-      document.getElementById('count-apps').textContent = clientProjects.filter(p => p.category === 'apps').length;
 
       renderProjects(clientProjects);
       calculateQuote();
