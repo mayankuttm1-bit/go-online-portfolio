@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go Online | High-Performance Business Websites & Web Solutions</title>
+  <meta name="description" content="Go Online creates high-converting, blazing-fast websites for Solar, Real Estate, Healthcare, Wellness, and High-Growth Enterprises. View our 20+ live client projects.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230284c7'/><polygon points='40,30 70,50 40,70' fill='white'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            },
+            solar: '#f59e0b',
+            estate: '#10b981',
+            health: '#06b6d4',
+          },
+          animation: {
+            'glow-pulse': 'glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            glow: {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '0.8' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284c7;
+    }
+
+    /* Glassmorphism Classes */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.2);
+    }
+
+    .badge-solar {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .badge-estate {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .badge-health {
+      background: rgba(6, 182, 212, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    .badge-app {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    /* Ambient background grid */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#050811] text-slate-200 antialiased selection:bg-brand-500 selection:text-white font-sans min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-sky-600/15 rounded-full blur-[140px]"></div>
+    <div class="absolute top-[35%] -right-20 w-[550px] h-[550px] bg-emerald-500/10 rounded-full blur-[150px]"></div>
+    <div class="absolute top-[65%] -left-20 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[160px]"></div>
+    <div class="absolute inset-0 bg-grid-pattern"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 glass-card border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/25 group-hover:shadow-sky-500/40 transition-all duration-300">
+          <i class="fa-solid fa-globe text-white text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+        </div>
+        <div>
+          <span class="font-display font-bold text-2xl tracking-tight text-white flex items-center gap-1.5">
+            Go Online <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+          </span>
+          <span class="text-xs text-sky-400 font-medium tracking-wide block uppercase">Web Development Agency</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#projects" class="hover:text-sky-400 transition-colors">Our Projects</a>
+        <a href="#specializations" class="hover:text-sky-400 transition-colors">Industries</a>
+        <a href="#calculator" class="hover:text-sky-400 transition-colors">Quote Estimator</a>
+        <a href="#why-us" class="hover:text-sky-400 transition-colors">Why Choose Us</a>
+        <a href="#process" class="hover:text-sky-400 transition-colors">Process</a>
+      </nav>
+
+      <!-- CTA Action -->
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/mayankuttm1-bit" target="_blank" rel="noopener noreferrer" 
+           class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-xs font-semibold text-slate-200 transition-all">
+          <i class="fa-brands fa-github text-sm"></i> GitHub
+        </a>
+        <a href="#contact" 
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]">
+          <i class="fa-regular fa-paper-plane text-xs"></i> Start Project
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN HERO SECTION -->
+  <section id="home" class="relative z-10 pt-16 pb-24 md:pt-24 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-6 animate-pulse">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 20+ Live Websites Engineered for Real-World Clients
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+        High-Impact Websites That Turn <span class="bg-gradient-to-r from-sky-400 via-blue-400 to-teal-300 bg-clip-text text-transparent">Visitors Into Customers</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+        <strong class="text-white">Go Online</strong> builds high-speed, conversion-engineered digital platforms for 
+        <span class="text-amber-400 font-medium">Solar Solutions</span>, 
+        <span class="text-emerald-400 font-medium">Real Estate Firms</span>, 
+        <span class="text-cyan-400 font-medium">Healthcare Clinics</span>, and growing business enterprises.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-base shadow-xl shadow-sky-500/25 flex items-center justify-center gap-3 transition-all hover:-translate-y-0.5">
+          <i class="fa-solid fa-arrow-down"></i> Explore Client Websites (22+)
+        </a>
+        <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-base flex items-center justify-center gap-3 transition-all hover:-translate-y-0.5">
+          <i class="fa-solid fa-calculator text-sky-400"></i> Calculate Website Quote
+        </a>
+      </div>
+
+      <!-- Metrics Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-white/10 text-left">
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="text-3xl font-display font-bold text-sky-400 mb-1">22+</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Client Websites Live</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="text-3xl font-display font-bold text-emerald-400 mb-1">&lt; 1.2s</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Lightning Load Speed</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="text-3xl font-display font-bold text-amber-400 mb-1">5+</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Specialized Verticals</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="text-3xl font-display font-bold text-purple-400 mb-1">100%</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Mobile & SEO Ready</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALIZATION HIGHLIGHTS -->
+  <section id="specializations" class="relative z-10 py-16 bg-slate-950/60 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Engineered for Your Industry</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">Specialized Industry Solutions</h2>
+        <p class="text-slate-400 mt-3 text-sm sm:text-base">We don't build generic templates. Each site is custom tailored with sector-specific features that drive sales inquiries.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Solar Card -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6">
+            <i class="fa-solid fa-solar-panel"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Solar Energy & EPC</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Engineered with solar savings calculators, PM-KUSUM subsidy breakdowns, site inspection booking funnels, and commercial portfolio showcases.
+          </p>
+          <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Solar ROI & Savings Estimator</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Instant Site Survey Lead Form</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Commercial & Residential EPC showcase</li>
+          </ul>
+          <button onclick="filterProjects('solar')" class="text-amber-400 font-semibold text-xs flex items-center gap-1.5 hover:gap-2.5 transition-all">
+            View 8 Solar Projects <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Real Estate Card -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl mb-6">
+            <i class="fa-solid fa-building-wheat"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Real Estate & Developers</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            High-converting property landing pages, verified broker portfolios, interactive project floor plans, and one-click WhatsApp client contact.
+          </p>
+          <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Interactive Plot & Unit Showcases</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Instant WhatsApp Broker Lead Triggers</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> EMI Calculators & Location Highlights</li>
+          </ul>
+          <button onclick="filterProjects('realestate')" class="text-emerald-400 font-semibold text-xs flex items-center gap-1.5 hover:gap-2.5 transition-all">
+            View 8 Real Estate Projects <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Healthcare & Wellness Card -->
+        <div class="glass-card glass-card-hover p-8 rounded-3xl relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-2xl mb-6">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Healthcare & Wellness</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Patient-trust dental and clinic websites, luxury salon booking systems, and gym membership acquisition funnels built for immediate appointments.
+          </p>
+          <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Online Appointment Request System</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Doctor Credential & Trust Showcases</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Treatment Catalogs with Clear Pricing</li>
+          </ul>
+          <button onclick="filterProjects('wellness')" class="text-sky-400 font-semibold text-xs flex items-center gap-1.5 hover:gap-2.5 transition-all">
+            View 6 Healthcare & Wellness Projects <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS PORTFOLIO SECTION -->
+  <section id="projects" class="relative z-10 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-semibold mb-3">
+          <i class="fa-solid fa-code"></i> Live Production Work
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">Client Projects Showcase</h2>
+        <p class="text-slate-400 mt-2 max-w-xl text-sm sm:text-base">
+          Browse through live client websites deployed and active on GitHub Pages and Vercel. Test every link, layout, and mobile responsiveness.
+        </p>
+      </div>
+
+      <!-- Search Box -->
+      <div class="relative w-full md:w-72">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+        <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search client or keyword..." 
+               class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 focus:border-sky-500 focus:outline-none text-sm text-white placeholder-slate-500 transition-colors">
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap items-center gap-2 mb-10 pb-2 overflow-x-auto text-xs font-semibold">
+      <button onclick="filterProjects('all')" data-cat="all" class="filter-btn active-tab px-4 py-2 rounded-xl border border-sky-500 bg-sky-500 text-white transition-all">
+        All Projects (<span id="count-all">22</span>)
+      </button>
+      <button onclick="filterProjects('solar')" data-cat="solar" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-all">
+        ☀️ Solar Energy (<span id="count-solar">8</span>)
+      </button>
+      <button onclick="filterProjects('realestate')" data-cat="realestate" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-400 transition-all">
+        🏢 Real Estate (<span id="count-realestate">8</span>)
+      </button>
+      <button onclick="filterProjects('wellness')" data-cat="wellness" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-sky-500/50 hover:text-sky-400 transition-all">
+        🩺 Healthcare & Wellness (<span id="count-wellness">4</span>)
+      </button>
+      <button onclick="filterProjects('fitness')" data-cat="fitness" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-purple-500/50 hover:text-purple-400 transition-all">
+        🏋️ Fitness & Gym (<span id="count-fitness">2</span>)
+      </button>
+      <button onclick="filterProjects('apps')" data-cat="apps" class="filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-indigo-500/50 hover:text-indigo-400 transition-all">
+        ⚡ Custom Web Apps & CRM (<span id="count-apps">2</span>)
+      </button>
+    </div>
+
+    <!-- Projects Grid Container -->
+    <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project cards will be populated dynamically by JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-16">
+      <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 text-2xl mx-auto mb-4">
+        <i class="fa-solid fa-folder-open"></i>
+      </div>
+      <h3 class="text-lg font-bold text-white">No projects found</h3>
+      <p class="text-sm text-slate-400 mt-1">Try modifying your search term or select another category filter.</p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ESTIMATION / QUOTE CALCULATOR -->
+  <section id="calculator" class="relative z-10 py-20 bg-slate-950/80 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Instant Estimate</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">Website Scope & Timeline Calculator</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">Get an immediate estimation for your upcoming project timeline and deliverables.</p>
+      </div>
+
+      <div class="glass-card p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl">
+        <!-- Step 1: Industry -->
+        <div class="mb-8">
+          <label class="block text-sm font-semibold text-slate-300 mb-3">1. Select Your Business Industry</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button type="button" onclick="selectCalcIndustry(this, 'Solar Energy')" class="calc-ind-btn active-calc px-4 py-3 rounded-xl border border-sky-500 bg-sky-500/10 text-white font-medium text-xs sm:text-sm text-center transition-all">
+              ☀️ Solar Energy
+            </button>
+            <button type="button" onclick="selectCalcIndustry(this, 'Real Estate')" class="calc-ind-btn px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 font-medium text-xs sm:text-sm text-center hover:border-slate-500 transition-all">
+              🏢 Real Estate
+            </button>
+            <button type="button" onclick="selectCalcIndustry(this, 'Healthcare / Clinic')" class="calc-ind-btn px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 font-medium text-xs sm:text-sm text-center hover:border-slate-500 transition-all">
+              🩺 Healthcare / Clinic
+            </button>
+            <button type="button" onclick="selectCalcIndustry(this, 'Other Enterprise')" class="calc-ind-btn px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 font-medium text-xs sm:text-sm text-center hover:border-slate-500 transition-all">
+              💼 Enterprise / Other
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Website Scale -->
+        <div class="mb-8">
+          <label class="block text-sm font-semibold text-slate-300 mb-3">2. Project Scope & Architecture</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 cursor-pointer hover:border-sky-500 transition-all">
+              <input type="radio" name="calcScope" value="landing" onchange="calculateQuote()" checked class="accent-sky-500">
+              <div>
+                <div class="text-sm font-bold text-white">Single-Page Landing</div>
+                <div class="text-xs text-slate-400">High-conversion lead capture</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 cursor-pointer hover:border-sky-500 transition-all">
+              <input type="radio" name="calcScope" value="multi" onchange="calculateQuote()" class="accent-sky-500">
+              <div>
+                <div class="text-sm font-bold text-white">Complete Multi-Page</div>
+                <div class="text-xs text-slate-400">5-8 custom pages & services</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 cursor-pointer hover:border-sky-500 transition-all">
+              <input type="radio" name="calcScope" value="portal" onchange="calculateQuote()" class="accent-sky-500">
+              <div>
+                <div class="text-sm font-bold text-white">Custom Web Portal</div>
+                <div class="text-xs text-slate-400">Calculator, CRM or lead pipeline</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3: Add-on Features -->
+        <div class="mb-8">
+          <label class="block text-sm font-semibold text-slate-300 mb-3">3. Key Growth Add-ons</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900/40 border border-slate-800 cursor-pointer hover:border-slate-600">
+              <input type="checkbox" id="featureWhatsapp" checked onchange="calculateQuote()" class="accent-sky-500">
+              <span class="text-slate-300">Instant WhatsApp Click-to-Chat Funnel</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900/40 border border-slate-800 cursor-pointer hover:border-slate-600">
+              <input type="checkbox" id="featureSeo" checked onchange="calculateQuote()" class="accent-sky-500">
+              <span class="text-slate-300">Local SEO Schema & Meta Optimization</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900/40 border border-slate-800 cursor-pointer hover:border-slate-600">
+              <input type="checkbox" id="featureCalculator" onchange="calculateQuote()" class="accent-sky-500">
+              <span class="text-slate-300">Interactive Savings / EMI Calculator</span>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900/40 border border-slate-800 cursor-pointer hover:border-slate-600">
+              <input type="checkbox" id="featureDomain" onchange="calculateQuote()" class="accent-sky-500">
+              <span class="text-slate-300">Custom Domain & GitHub/Vercel Setup</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-sky-950/60 to-blue-950/60 border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-sky-400 font-bold mb-1">Estimated Delivery Timeline</div>
+            <div id="calcDays" class="text-3xl font-display font-extrabold text-white">4 - 6 Business Days</div>
+            <div id="calcSummary" class="text-xs text-slate-300 mt-1">Single-page landing + WhatsApp & SEO setup</div>
+          </div>
+          <button onclick="requestQuoteWithDetails()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm shadow-lg shadow-sky-500/30 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Book This With Go Online
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE GO ONLINE -->
+  <section id="why-us" class="relative z-10 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Competitive Advantage</span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">Why Growing Businesses Trust Go Online</h2>
+      <p class="text-slate-400 mt-2 text-sm sm:text-base">We combine modern frontend performance, zero maintenance headaches, and aggressive conversion architecture.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-gauge-high"></i>
+        </div>
+        <h4 class="text-base font-bold text-white mb-2">99+ Google PageSpeed</h4>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Ultra-clean, dependency-free code ensuring sub-second load times on mobile 4G networks so you never lose an impatient visitor.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <h4 class="text-base font-bold text-white mb-2">Direct Lead Generation</h4>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Sticky WhatsApp contact buttons, high-intent lead capture forms, and click-to-call triggers strategically placed across every section.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-server"></i>
+        </div>
+        <h4 class="text-base font-bold text-white mb-2">Zero Expensive Hosting</h4>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Deployed directly on robust enterprise clouds like GitHub Pages and Vercel with free SSL certificates and 99.99% uptime SLA.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h4 class="text-base font-bold text-white mb-2">You Own 100% Code</h4>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          No proprietary CMS traps or monthly subscription locks. Full open-source code stored securely in your GitHub repository.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-STEP PROCESS -->
+  <section id="process" class="relative z-10 py-20 bg-slate-950/60 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-400">How We Work</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">From Idea to Live Website in 4 Steps</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="relative">
+          <div class="text-6xl font-display font-extrabold text-white/5 mb-2">01</div>
+          <h4 class="text-lg font-bold text-white mb-2">Discovery & Blueprint</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">We understand your target clients, service catalog, and competitors to design a tailored conversion structure.</p>
+        </div>
+        <div class="relative">
+          <div class="text-6xl font-display font-extrabold text-white/5 mb-2">02</div>
+          <h4 class="text-lg font-bold text-white mb-2">UI/UX Crafting</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">We design modern, mobile-first layouts with high-contrast typography, brand accents, and clean visual flow.</p>
+        </div>
+        <div class="relative">
+          <div class="text-6xl font-display font-extrabold text-white/5 mb-2">03</div>
+          <h4 class="text-lg font-bold text-white mb-2">Speed Development</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">We build with lightweight, responsive code, embedding dynamic contact funnels and SEO meta structures.</p>
+        </div>
+        <div class="relative">
+          <div class="text-6xl font-display font-extrabold text-white/5 mb-2">04</div>
+          <h4 class="text-lg font-bold text-white mb-2">Deployment & Launch</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">We deploy live on GitHub/Vercel, hook up your custom domain, test speed, and deliver full repository access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & PROPOSAL SECTION -->
+  <section id="contact" class="relative z-10 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Get in Touch</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2 mb-4">
+            Ready to Take Your Business Online?
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+            Tell us about your business or client requirements. We’ll deliver a high-converting website proposal and live prototype within 24 hours.
+          </p>
+
+          <div class="space-y-4 text-sm text-slate-300">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Agency Name</div>
+                <div class="font-bold text-white">Go Online Web Solutions</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Instant Chat & Call</div>
+                <a href="https://wa.me/?text=Hi%20Go%20Online,%20I%20would%20like%20to%20build%20a%20website" target="_blank" class="font-bold text-emerald-400 hover:underline">
+                  Chat Directly on WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+                <i class="fa-brands fa-github text-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">GitHub Organization / Profile</div>
+                <a href="https://github.com/mayankuttm1-bit" target="_blank" class="font-bold text-purple-400 hover:underline">
+                  github.com/mayankuttm1-bit
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Inquiry Form -->
+        <div class="bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl">
+          <h3 class="text-lg font-bold text-white mb-4">Request a Free Proposal</h3>
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+              <input type="text" id="clientName" required placeholder="John Doe" 
+                     class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:border-sky-500 focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Your Industry / Business Name</label>
+              <input type="text" id="clientBusiness" required placeholder="e.g. Apex Solar / Skyline Realty" 
+                     class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:border-sky-500 focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp or Phone Number</label>
+              <input type="tel" id="clientPhone" required placeholder="+91 / Country Code" 
+                     class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:border-sky-500 focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Project Details or Requirements</label>
+              <textarea id="clientNotes" rows="3" placeholder="Tell us about the website you need..." 
+                        class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:border-sky-500 focus:outline-none transition-colors"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-sky-500/25 transition-all">
+              Send Website Proposal Request
+            </button>
+            <p id="formFeedback" class="text-xs text-center text-emerald-400 hidden mt-2">
+              <i class="fa-solid fa-check"></i> Inquiring message generated! Connecting via WhatsApp...
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-white/5 py-12 bg-[#03060c] text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-7 h-7 rounded-lg bg-sky-500 flex items-center justify-center text-white text-xs">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <span class="font-display font-bold text-sm text-white">Go Online</span>
+        <span>— High Performance Business Websites</span>
+      </div>
+
+      <div>
+        Deployed with ❤️ for our clients across Solar, Real Estate & Enterprise Sectors.
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/mayankuttm1-bit" target="_blank" class="hover:text-white transition-colors">
+          <i class="fa-brands fa-github text-sm"></i> GitHub
+        </a>
+        <a href="#projects" class="hover:text-white transition-colors">Portfolio</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT DATA & INTERACTIVITY -->
+  <script>
+    // Complete Verified Client Projects from mayankuttm1-bit GitHub
+    const clientProjects = [
+      // ☀️ SOLAR ENERGY WEBSITES
+      {
+        id: 'innovative-energy-solutions',
+        title: 'Innovative Energy Solutions',
+        category: 'solar',
+        categoryLabel: 'Solar EPC & Clean Tech',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-solar-panel',
+        description: 'Comprehensive commercial & residential solar EPC web portal featuring project galleries, clean energy ROI metrics, and consultation capture.',
+        tags: ['Solar EPC', 'Commercial Solar', 'Clean Energy', 'GitHub Pages'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/innovative-energy-solutions/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/innovative-energy-solutions',
+        host: 'GitHub Pages',
+        featured: true
+      },
+      {
+        id: 'almighty-solar',
+        title: 'Almighty Solar',
+        category: 'solar',
+        categoryLabel: 'Solar Power Solutions',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-sun',
+        description: 'High-conversion rooftop solar setup portal with dynamic savings calculator, residential packages, and fast site-survey scheduler.',
+        tags: ['Rooftop Solar', 'Savings Calculator', 'Residential', 'Lead Gen'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/almighty-solar/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/almighty-solar',
+        host: 'GitHub Pages',
+        featured: true
+      },
+      {
+        id: 'everlasting-solar',
+        title: 'Everlasting Solar',
+        category: 'solar',
+        categoryLabel: 'Sustainable Power',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-bolt',
+        description: 'Modern clean-tech web interface highlighting high-efficiency solar panel modules, inverter warranties, and subsidy advisory.',
+        tags: ['Solar Modules', 'Green Tech', 'Government Subsidy'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/everlasting-solar/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/everlasting-solar',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'vidya-vahini-solar',
+        title: 'Vidya Vahini Solar',
+        category: 'solar',
+        categoryLabel: 'Institutional Solar',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-school-flag',
+        description: 'Campus and institutional renewable energy infrastructure showcase with large-scale off-grid power case studies.',
+        tags: ['Institutional', 'Campus Solar', 'Infrastructure'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/vidya-vahini-solar/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/vidya-vahini-solar',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'sheetal-solar-power',
+        title: 'Sheetal Solar Power',
+        category: 'solar',
+        categoryLabel: 'Solar & Battery Storage',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-battery-full',
+        description: 'Residential & commercial solar installation site highlighting battery backup storage, energy independence, and maintenance contracts.',
+        tags: ['Battery Storage', 'Hybrid Solar', 'Maintenance'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/sheetal-solar-power/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/sheetal-solar-power',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'shri-rk-solar-solutions',
+        title: 'Shri RK Solar Solutions',
+        category: 'solar',
+        categoryLabel: 'Solar Engineering',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-plug-circle-bolt',
+        description: 'Turnkey solar EPC platform with localized customer testimonials, turnkey installation timelines, and fast quote dispatch.',
+        tags: ['Turnkey EPC', 'Local Business', 'Lead Capture'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/shri-rk-solar-solutions/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/shri-rk-solar-solutions',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'adinath-enterprises-solar',
+        title: 'Adinath Enterprises Solar',
+        category: 'solar',
+        categoryLabel: 'Agri & Commercial Solar',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-wheat-awn',
+        description: 'Agricultural solar pump systems & industrial rooftop setup website with PM-KUSUM scheme guidance for farmers and businesses.',
+        tags: ['Solar Pumps', 'PM-KUSUM', 'Agri-Tech'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/adinath-enterprises-solar/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/adinath-enterprises-solar',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'rs-enterprises-solar',
+        title: 'RS Enterprises Solar',
+        category: 'solar',
+        categoryLabel: 'Industrial Clean Energy',
+        badgeClass: 'badge-solar',
+        icon: 'fa-solid fa-industry',
+        description: 'Heavy industrial solar engineering platform with real-time generation metrics showcases, technical specs, and commercial EPC inquiry.',
+        tags: ['Industrial Solar', 'Grid-Tie', 'Engineering'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/rs-enterprises-solar/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/rs-enterprises-solar',
+        host: 'GitHub Pages'
+      },
+
+      // 🏢 REAL ESTATE & PROPERTY WEBSITES
+      {
+        id: 'swastik-real-states',
+        title: 'Swastik Real States',
+        category: 'realestate',
+        categoryLabel: 'Luxury Real Estate',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-city',
+        description: 'Modern luxury real estate portal showcasing prime residential plots, commercial properties, and executive villas with direct broker contact.',
+        tags: ['Real Estate', 'Luxury Villas', 'Vercel App'],
+        liveUrl: 'https://swastil-real-states.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/Swastik-real-states',
+        host: 'Vercel',
+        featured: true
+      },
+      {
+        id: 'lucknow-real-estate-sites',
+        title: 'Lucknow Real Estate Sites',
+        category: 'realestate',
+        categoryLabel: 'City Property Portal',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-map-location-dot',
+        description: 'Prime regional real estate discovery portal highlighting top residential developments and investment corridors in Lucknow.',
+        tags: ['Property Portal', 'Investment Hub', 'Local Realty'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/lucknow-real-estate-sites/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/lucknow-real-estate-sites',
+        host: 'GitHub Pages',
+        featured: true
+      },
+      {
+        id: 'vidit-signature',
+        title: 'Vidit Signature',
+        category: 'realestate',
+        categoryLabel: 'Signature Residency',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-landmark',
+        description: 'Exclusive architectural property showcase landing page with unit floor plan previews, VIP site tour bookings, and luxury amenities.',
+        tags: ['Luxury Suites', 'VIP Walkthrough', 'High End'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/vidit-signature/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/vidit-signature',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'ashiyana-real-estate',
+        title: 'Ashiyana Real Estate',
+        category: 'realestate',
+        categoryLabel: 'Township & Housing',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-house-chimney',
+        description: 'Family-oriented residential township platform with plot dimensions, neighborhood infrastructure guides, and easy EMI estimation.',
+        tags: ['Townships', 'Residential Plots', 'EMI Calculator'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/Ashiyana-Real-Estate/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/Ashiyana-Real-Estate',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'shri-manibhadra-real-estate-brokers',
+        title: 'Shri Manibhadra Brokers',
+        category: 'realestate',
+        categoryLabel: 'Property Brokerage Hub',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-handshake',
+        description: 'Commercial and residential advisory portal featuring verified title deed certifications and direct WhatsApp broker consultations.',
+        tags: ['Brokerage', 'Commercial Land', 'WhatsApp Direct'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/Shri-Manibhadra-Real-estate-brokers/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/Shri-Manibhadra-Real-estate-brokers',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'ambition-real-estate',
+        title: 'Ambition Real Estate',
+        category: 'realestate',
+        categoryLabel: 'Modern Real Estate Agency',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-building',
+        description: 'Dynamic real estate portfolio highlighting residential flats, commercial shops, and transparent square footage pricing.',
+        tags: ['Flats & Shops', 'Transparent Pricing', 'Property Filter'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/ambition_real_estate/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/ambition_real_estate',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'tirupati-homes',
+        title: 'Tirupati Homes',
+        category: 'realestate',
+        categoryLabel: 'Gated Community Project',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-shield-cat',
+        description: 'Modern residential enclave web showcase with 24/7 security features, kids park amenities, and site inspection booking.',
+        tags: ['Gated Community', 'Security', 'Clubhouse'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/TirupatiHomes/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/TirupatiHomes',
+        host: 'GitHub Pages'
+      },
+      {
+        id: 'shri-manibhadra-real-estate',
+        title: 'Shri Manibhadra Real Estate',
+        category: 'realestate',
+        categoryLabel: 'Land Acquisition & Realty',
+        badgeClass: 'badge-estate',
+        icon: 'fa-solid fa-trowel-bricks',
+        description: 'Corporate real estate portal focused on industrial plots, warehouse leasing, and verified commercial development projects.',
+        tags: ['Commercial Plots', 'Warehousing', 'Industrial'],
+        liveUrl: 'https://mayankuttm1-bit.github.io/shri-manibhadra-real-estate/',
+        githubUrl: 'https://github.com/mayankuttm1-bit/shri-manibhadra-real-estate',
+        host: 'GitHub Pages'
+      },
+
+      // 🩺 HEALTHCARE, CLINIC & WELLNESS
+      {
+        id: 'the-crown-dental-clinic',
+        title: 'The Crown Dental Clinic',
+        category: 'wellness',
+        categoryLabel: 'Healthcare & Dental',
+        badgeClass: 'badge-health',
+        icon: 'fa-solid fa-tooth',
+        description: 'State-of-the-art dental clinic web portal with doctor qualification highlights, cosmetic smile treatments, and seamless appointment booking.',
+        tags: ['Dental Clinic', 'Doctor Profile', 'Appointment Booking', 'Vercel'],
+        liveUrl: 'https://the-crown-dental-clinic.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/The-crown-dental-clinic',
+        host: 'Vercel',
+        featured: true
+      },
+      {
+        id: 'the-arc-spa-and-salon',
+        title: 'The ARC Spa & Salon',
+        category: 'wellness',
+        categoryLabel: 'Luxury Wellness & Salon',
+        badgeClass: 'badge-health',
+        icon: 'fa-solid fa-spa',
+        description: 'High-end beauty salon & luxury spa platform with interactive service menus, aroma therapy pricing, and VIP booking inquiry.',
+        tags: ['Luxury Spa', 'Beauty Salon', 'Service Menu', 'Vercel'],
+        liveUrl: 'https://the-arc-spa-and-salon.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/the-arc-spa-and-salon',
+        host: 'Vercel',
+        featured: true
+      },
+      {
+        id: 'babita-spa',
+        title: 'Babita Spa',
+        category: 'wellness',
+        categoryLabel: 'Therapeutic Wellness',
+        badgeClass: 'badge-health',
+        icon: 'fa-solid fa-hand-holding-heart',
+        description: 'Holistic massage & wellness clinic portal with therapeutic treatment descriptions, package discounts, and quick phone booking.',
+        tags: ['Therapeutic Massage', 'Holistic Care', 'Vercel'],
+        liveUrl: 'https://babita-spa.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/Babita-spa',
+        host: 'Vercel'
+      },
+      {
+        id: 'ram-madhav',
+        title: 'Ram Madhav Profile',
+        category: 'wellness',
+        categoryLabel: 'Executive Portfolio',
+        badgeClass: 'badge-health',
+        icon: 'fa-solid fa-user-tie',
+        description: 'Clean personal and professional branding platform featuring executive credentials, media features, and public speaking archives.',
+        tags: ['Executive Brand', 'Personal Portfolio', 'Vercel'],
+        liveUrl: 'https://ram-madhav.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/Ram-Madhav',
+        host: 'Vercel'
+      },
+
+      // 🏋️ FITNESS & GYM
+      {
+        id: 'ethics-fitness',
+        title: 'Ethics Fitness Center',
+        category: 'fitness',
+        categoryLabel: 'Fitness & Gym Club',
+        badgeClass: 'badge-health',
+        icon: 'fa-solid fa-dumbbell',
+        description: 'High-impact fitness center portal with workout regime breakdowns, personal trainer profiles, and free 1-day pass conversion flow.',
+        tags: ['Gym & Fitness', 'Personal Training', 'Member Funnel', 'Vercel'],
+        liveUrl: 'https://ethics-fitness.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/ethics-fitness',
+        host: 'Vercel',
+        featured: true
+      },
+      {
+        id: 'ethics-fitness-pro',
+        title: 'Ethics Fitness Studio',
+        category: 'fitness',
+        categoryLabel: 'Strength & Conditioning',
+        badgeClass: 'badge-health',
+        icon: 'fa-solid fa-heart-pulse',
+        description: 'Complementary athletic fitness layout with diet consultation forms, group class schedules, and interactive membership tiers.',
+        tags: ['Strength Training', 'Class Schedule', 'Diet Guidance'],
+        liveUrl: 'https://ethics-fitness.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/Ethics_fitness',
+        host: 'Vercel'
+      },
+
+      // ⚡ WEB APPS & LEAD AUTOMATION
+      {
+        id: 'go-online-crm',
+        title: 'Go Online CRM',
+        category: 'apps',
+        categoryLabel: 'Custom SaaS Platform',
+        badgeClass: 'badge-app',
+        icon: 'fa-solid fa-chart-line',
+        description: 'Proprietary client management dashboard engineered for sales pipeline tracking, lead source analytics, and automated quote generation.',
+        tags: ['SaaS', 'CRM Dashboard', 'Lead Pipeline', 'Vercel'],
+        liveUrl: 'https://go-online-crm.vercel.app',
+        githubUrl: 'https://github.com/mayankuttm1-bit/go-online-crm',
+        host: 'Vercel',
+        featured: true
+      },
+      {
+        id: 'real-estate-lead-generator',
+        title: 'Real Estate Lead Generator',
+        category: 'apps',
+        categoryLabel: 'Lead Engine & Cold Mailer',
+        badgeClass: 'badge-app',
+        icon: 'fa-solid fa-envelope-open-text',
+        description: 'Automated outreach system designed for property developers and brokers to connect with prospective buyers via email automation.',
+        tags: ['Lead Scraping', 'Email Outreach', 'Cold Mailer', 'Automation'],
+        liveUrl: 'https://github.com/mayankuttm1-bit/real-estate-lead-generator-cold-mailer',
+        githubUrl: 'https://github.com/mayankuttm1-bit/real-estate-lead-generator-cold-mailer',
+        host: 'GitHub Repo'
+      }
+    ];
+
+    let currentCategory = 'all';
+
+    // Render Projects
+    function renderProjects(projectsToRender) {
+      const grid = document.getElementById('projectsGrid');
+      const noResults = document.getElementById('noResults');
+
+      if (!projectsToRender || projectsToRender.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+      grid.innerHTML = projectsToRender.map(project => `
+        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between border border-white/10 relative overflow-hidden group">
+          <!-- Top Row: Category & Host Status -->
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold ${project.badgeClass}">
+                <i class="${project.icon} mr-1"></i> ${project.categoryLabel}
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live ${project.host}
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+              ${project.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-xs text-slate-400 leading-relaxed mb-5 line-clamp-3">
+              ${project.description}
+            </p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              ${project.tags.map(tag => `
+                <span class="px-2 py-0.5 rounded-md bg-slate-800/80 text-[10px] text-slate-300 font-medium border border-slate-700/50">
+                  ${tag}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Bottom Actions -->
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between gap-3">
+            <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" 
+               class="flex-1 py-2.5 px-3 rounded-xl bg-sky-500/10 hover:bg-sky-500 text-sky-400 hover:text-white border border-sky-500/30 hover:border-transparent text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Visit Live Site
+            </a>
+            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" 
+               title="View GitHub Repository"
+               class="py-2.5 px-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-semibold transition-all flex items-center justify-center">
+              <i class="fa-brands fa-github text-sm"></i>
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Logic
+    function filterProjects(cat) {
+      currentCategory = cat;
+
+      // Update button active states
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'filter-btn active-tab px-4 py-2 rounded-xl border border-sky-500 bg-sky-500 text-white transition-all';
+        } else {
+          btn.className = 'filter-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:border-slate-600 transition-all';
+        }
+      });
+
+      // Clear search input
+      document.getElementById('searchInput').value = '';
+
+      if (cat === 'all') {
+        renderProjects(clientProjects);
+      } else {
+        const filtered = clientProjects.filter(p => p.category === cat);
+        renderProjects(filtered);
+      }
+    }
+
+    // Search Logic
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      let pool = currentCategory === 'all' 
+        ? clientProjects 
+        : clientProjects.filter(p => p.category === currentCategory);
+
+      if (!q) {
+        renderProjects(pool);
+        return;
+      }
+
+      const results = pool.filter(p => 
+        p.title.toLowerCase().includes(q) || 
+        p.description.toLowerCase().includes(q) ||
+        p.tags.some(t => t.toLowerCase().includes(q))
+      );
+
+      renderProjects(results);
+    }
+
+    // Interactive Calculator
+    let selectedIndustry = 'Solar Energy';
+    function selectCalcIndustry(btn, industry) {
+      selectedIndustry = industry;
+      document.querySelectorAll('.calc-ind-btn').forEach(b => {
+        b.className = 'calc-ind-btn px-4 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 font-medium text-xs sm:text-sm text-center hover:border-slate-500 transition-all';
+      });
+      btn.className = 'calc-ind-btn active-calc px-4 py-3 rounded-xl border border-sky-500 bg-sky-500/10 text-white font-medium text-xs sm:text-sm text-center transition-all';
+      calculateQuote();
+    }
+
+    function calculateQuote() {
+      const scope = document.querySelector('input[name="calcScope"]:checked').value;
+      const hasWhatsapp = document.getElementById('featureWhatsapp').checked;
+      const hasSeo = document.getElementById('featureSeo').checked;
+      const hasCalc = document.getElementById('featureCalculator').checked;
+      const hasDomain = document.getElementById('featureDomain').checked;
+
+      let minDays = 3;
+      let maxDays = 5;
+      let summary = `${selectedIndustry} `;
+
+      if (scope === 'landing') {
+        minDays = 3;
+        maxDays = 5;
+        summary += 'Single Landing Page';
+      } else if (scope === 'multi') {
+        minDays = 6;
+        maxDays = 10;
+        summary += 'Full Multi-Page Website';
+      } else if (scope === 'portal') {
+        minDays = 12;
+        maxDays = 18;
+        summary += 'Custom Web Application / CRM';
+      }
+
+      let extraFeatures = [];
+      if (hasWhatsapp) extraFeatures.push('WhatsApp Funnel');
+      if (hasSeo) extraFeatures.push('Local SEO');
+      if (hasCalc) extraFeatures.push('Custom Calculator');
+      if (hasDomain) extraFeatures.push('Cloud Hosting Setup');
+
+      if (extraFeatures.length > 0) {
+        summary += ` + ${extraFeatures.slice(0, 2).join(' & ')}`;
+        if (extraFeatures.length > 2) summary += ` + ${extraFeatures.length - 2} more`;
+      }
+
+      document.getElementById('calcDays').textContent = `${minDays} - ${maxDays} Business Days`;
+      document.getElementById('calcSummary').textContent = summary;
+    }
+
+    function requestQuoteWithDetails() {
+      const summary = document.getElementById('calcSummary').textContent;
+      const days = document.getElementById('calcDays').textContent;
+      const message = `Hello Go Online! I estimated my project on your portfolio site:%0A- Scope: ${summary}%0A- Target Timeline: ${days}%0A%0ACan we discuss building this for my business?`;
+      window.open(`https://wa.me/?text=${message}`, '_blank');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const business = document.getElementById('clientBusiness').value;
+      const phone = document.getElementById('clientPhone').value;
+      const notes = document.getElementById('clientNotes').value;
+
+      const message = `Hi Go Online,%0AMy Name: ${name}%0ABusiness: ${business}%0APhone: ${phone}%0ARequirements: ${notes}`;
+      
+      const feedback = document.getElementById('formFeedback');
+      feedback.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.open(`https://wa.me/?text=${message}`, '_blank');
+      }, 800);
+    }
+
+    // Initialize counts
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('count-all').textContent = clientProjects.length;
+      document.getElementById('count-solar').textContent = clientProjects.filter(p => p.category === 'solar').length;
+      document.getElementById('count-realestate').textContent = clientProjects.filter(p => p.category === 'realestate').length;
+      document.getElementById('count-wellness').textContent = clientProjects.filter(p => p.category === 'wellness').length;
+      document.getElementById('count-fitness').textContent = clientProjects.filter(p => p.category === 'fitness').length;
+      document.getElementById('count-apps').textContent = clientProjects.filter(p => p.category === 'apps').length;
+
+      renderProjects(clientProjects);
+      calculateQuote();
+    });
+  </script>
+</body>
+</html>
